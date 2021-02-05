@@ -1,206 +1,73 @@
 <meta charset="UTF-8">
    <script>
-    //    Задание 1
-    //    var a = 1,
-    //        b = 1,
-    //        c, d;
-    //    c = ++a;
-    //    alert(c); // 2 Потому что сначала производится a = a + 1, а затем идет присвоение
-    //    d = b++;
-    //    alert(d); // 1 Потому что сначала происходит присвоение, а затем b увеличивается на 1 
-    //    c = (2 + ++a);
-    //    alert(c); // 5 Переменная а = 2, она увеличиается на 1, а только затем производится сложение
-    //    d = (2 + b++);
-    //    alert(d); // 4 Переменная b сначала увеличивается на 1, а только затем происходит сложение 
-    //    alert(a); // 3 Потому что а два раза увеличивается на 1
-    //    alert(b); // 3 Потому что b два раза увеличивается на 1
-
-    //    Задание 2
-    //    var a = 2;
-    //    var x = 1 + (a *= 2); // Ответ: 5
-    //    Первым действием является умножение переменной а на 2 (а = а * 2), затем происходит сложение
-
-    //    Задание 3
-//    var a = +prompt("Введите переменную а:"), b = +prompt("Введите переменную b:");
-//    if (a>=0 && b>=0) {
-//        alert(a-b);
-//    }
-//    else if (a<0 && b<0) {
-//        alert(a*b);
-//    }
-//    else {
-//        alert(a+b);
-//    }
-    
-//    Задание 4
-//    function list (n) {
-//        if (n < 15){
-//        while (n <= 15) {
-//            console.log(n);
-//            n++;
+//    Задание 1
+//       var i = 0;
+//       while (i<=100) {
+//           var j = 1, b = 0;
+//           while (j<=i/2){
+//               if (i % j == 0) {
+//                   b++;
+//               }
+//               j++;
+//           }
+//           if (b == 1) {
+//               console.log (i);
+//           }
+//           i++;
+//       }
+       
+//       Задание 2 + 3
+//           var goods = [
+//        {
+//            title: "Товар 1",
+//            price: 100,
+//            quantity: 2
+//        },
+//        {
+//            title: "Товар 2",
+//            price: 200,
+//            quantity: 3
+//        },
+//        {
+//            title: "Товар 3",
+//            price: 300,
+//            quantity: 1
 //        }
-//        }
-//        else (console.log(15));
+//    ];
+//       
+//    function countBasketPrice(mas){
+//    var s = 0;
+//    for(var good of mas){
+//        s += good.price*good.quantity;
 //    }
-//    
-//    var a = +prompt("Введите переменную а (от 0 до 15)");
-//    switch (a) {
-//        case 0:
-//            list(0);
-//            break;
-//        case 1:
-//            list(1);
-//            break;
-//        case 2:
-//            list(2);
-//            break;
-//        case 3:
-//            list(3);
-//            break;
-//        case 4:
-//            list(4);
-//            break;
-//        case 5:
-//            list(5);
-//            break;
-//        case 6:
-//            list(6);
-//            break;
-//        case 7:
-//            list(7);
-//            break;
-//        case 8:
-//            list(8);
-//            break;
-//        case 9:
-//            list(9);
-//            break;
-//        case 10:
-//            list(10);
-//            break;
-//        case 11:
-//            list(11);
-//            break;
-//        case 12:
-//            list(12);
-//            break;
-//        case 13:
-//            list(13);
-//            break;
-//        case 14:
-//            list (14);
-//            break;
-//        case 15:
-//            list(15);
-//            break;
-//        default:
-//            console.log("Некорректное число");
-//    }
+//        console.log(s);
+//}
+//    countBasketPrice(goods);
+
+//       Задание 4
+//       for(var i=0;i<10;console.log(i++)){}
        
 //       Задание 5
-//       function sum (c,d){
-//           return (c+d);
+//       Для выведения на страницу
+//       var x ='x', i=1;
+//       while (i<=20){
+//           var j=1;
+//           while(j<i){
+//               document.write(x);
+//               j++;
+//           }
+//           document.write(x+'<br>');
+//           i++;
 //       }
-//       
-//       function sub (c,d){
-//           return (c-d);
+       
+//       Для выведения в консоль
+//       var x ='x', i=1, mas = ['x'], j=1;
+//       while (i<=20){
+//           console.log(mas);
+//           while(j<=i){
+//               mas.push('x');
+//               j++;
+//           }
+//           i++;
 //       }
-//       
-//       function div (c,d){
-//           return (c/d);
-//       }
-//       
-//       function mult (c,d){
-//           return (c*d);
-//       }
-//       
-//       var a = +prompt("Введите переменную а:"), b = +prompt("Введите переменную b:"), op = prompt("Введите операцию"), res;
-//       switch (op) {
-//           case "+":
-//               res = sum (a,b);
-//               break;
-//            case "-":
-//               res = sub (a,b);
-//               break;
-//            case "/":
-//               res = div (a,b);
-//               break;
-//            case "*":
-//               res = mult (a,b);
-//               break;
-//           default:
-//               alert("Некорректная операция");
-//       }
-//       alert("res = " + res);
-       
-//       Задание 6
-//       function mathOperation(arg1, arg2, operation) {
-//           var res;
-//           switch (operation) {
-//           case "+":
-//               res = arg1+arg2;
-//               break;
-//            case "-":
-//               res = arg1-arg2;
-//               break;
-//            case "/":
-//               res = arg1/arg2;
-//               break;
-//            case "*":
-//               res = arg1*arg2;
-//               break;
-//           default:
-//               alert("Некорректная операция");
-//        }
-//           return(res);
-//       }
-//       
-//       var a = +prompt("Введите переменную а:"), b = +prompt("Введите переменную b:"), op = prompt("Введите операцию"), result = mathOperation(a,b,op);
-//       alert("result = " + result);
-       
-//       Задание 7
-//         alert(null == 0); //false
-//         alert(null > 0); //false
-//         alert(null < 0); //false
-//         alert(null != 0); //true
-//         alert(null >= 0); //true
-//         alert(null <= 0); //true
-//       Причина в том, что нестрогое равенство и сравнения > < >= <= работают по-разному. Сравнения преобразуют null в число, рассматривая его как 0. Поэтому выражение null >= 0 истинно, а null > 0 ложно.
-//
-//       С другой стороны, для нестрогого равенства == значений undefined и null действует особое правило: эти значения ни к чему не приводятся, они равны друг другу и не равны ничему другому. Поэтому null == 0 ложно.
-       
-//       Задание 8
-       function power(val, pow){
-           if (val == 1) {
-               return pow;
-           }
-           else {
-           pow *= a;
-           return power (val-1,pow);
-           }
-       }
-       
-       function powerminus (val,pow){
-           var s = 1/a;
-           pow *= s;
-            if (val == 0) {
-               return pow;
-           }
-           else {
-           return powerminus (val+1,pow.toFixed(2));
-           }
-       }
-       
-       var a = +prompt("Введите число"), b = +prompt("Введите степень"), result;
-       if (b>=1){
-           result = power(b,a);
-       }
-       else if (b<0) {
-           result = powerminus(b,a);
-       }
-       else if (b==0){
-           result = 1;
-       }
-       alert("result = " + result);
-       
 </script>
