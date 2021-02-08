@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<script>
+    //Задание 1
+
+    var number = +prompt('Введите число от 0 до 999:');
+
+    function transform(x) {
+        var result = {
+            ed: -1,
+            des: -1,
+            sot: -1
+        };
+        if (x < 0 || x > 999 || isNaN(x) || !isFinite(x)) {
+            alert("Вы ввели недопустиме число");
+            return result;
+        } else if (x < 10) {
+            result.ed = x;
+            result.des = 0;
+            result.sot = 0;
+        } else if (x < 100 && x > 9) {
+            result.ed = x % 10;
+            result.des = Math.round((x % 100) / 10);
+            result.sot = 0;
+        } else if (x < 1000) {
+            result.ed = x % 10;
+            result.des = Math.round((x % 100) / 10);
+            result.sot = Math.round(x / 100);
+        }
+        return result;
+
+    }
+
+    var split = transform(number);
+    console.log("'единицы': " + split.ed + ", 'десятки': " + split.des + ", 'сотни': " + split.sot)
+
+</script>
