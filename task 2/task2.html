@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="d2">
+        <div id="good-1" class="good">
+            <div class="good-info" id="good-1">
+                <h2 class="name">Телефон</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum suscipit, quibusdam, illo, eaque harum ullam esse laudantium reiciendis nostrum ratione aliquam molestias, ipsum eveniet sint at sed porro ea alias.</p>
+                <h3 class="price">3000</h3>
+            </div>
+            <button class="addgood">Добавить в корзину</button>
+        </div>
+        <div class="good">
+            <div class="good-info" id="good-2">
+                <h2 class="name">Машина</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum suscipit, quibusdam, illo, eaque harum ullam esse laudantium reiciendis nostrum ratione aliquam molestias, ipsum eveniet sint at sed porro ea alias.</p>
+                <h3 class="price">10000</h3>
+            </div>
+            <button class="addgood">Добавить в корзину</button>
+        </div>
+        <div class="good">
+            <div class="good-info" id="good-3">
+                <h2 class="name">Компьютер</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum suscipit, quibusdam, illo, eaque harum ullam esse laudantium reiciendis nostrum ratione aliquam molestias, ipsum eveniet sint at sed porro ea alias.</p>
+                <h3 class="price">5000</h3>
+            </div>
+            <button class="addgood">Добавить в корзину</button>
+        </div>
+    </div>
+    <div id="d1">
+        <h1 class="name-court">Корзина</h1>
+    </div>
+
+    <script>
+        var court = document.getElementById("d1"),
+            card = document.getElementById("d2"),
+            sumprice = 0,
+            sum = document.createElement("button");
+
+        function addtocourt(e) {
+            var good = document.createElement("div"),
+                namegood = document.createElement('h2'),
+                pricegood = document.createElement("h2"),
+                quantity = document.createElement("h2");
+
+            switch (e.target) {
+                case masbutton[0]:
+                    good.classList.add('good-1-court');
+                    namegood.innerText = document.querySelectorAll('h2.name')[0].innerText;
+                    quantity.innerText = prompt("Введите количество");
+                    var pr = 0, b = document.querySelectorAll('h3.price')[0];
+                    pr = Number(b.innerText) * Number(quantity.innerText);
+                    pricegood.innerText = pr;
+                    sumprice += pr;
+                    document.querySelector("div#d1").append(good);
+                    document.querySelector("div.good-1-court").append(namegood);
+                    document.querySelector("div.good-1-court").append(quantity);
+                    document.querySelector("div.good-1-court").append(pricegood);
+                    break;
+                case masbutton[1]:
+                    good.classList.add('good-2-court');
+                    namegood.innerText = document.querySelectorAll('h2.name')[1].innerText;
+                    quantity.innerText = prompt("Введите количество");
+                    var pr = 0, p = document.querySelectorAll('h3.price')[1];
+                    pr = Number(p.innerText) * Number(quantity.innerText);
+                    pricegood.innerText = pr;
+                    sumprice += pr;
+                    document.querySelector("div#d1").append(good);
+                    document.querySelector("div.good-2-court").append(namegood);
+                    document.querySelector("div.good-2-court").append(quantity);
+                    document.querySelector("div.good-2-court").append(pricegood);
+                    break;
+                case masbutton[2]:
+                    good.classList.add('good-3-court');
+                    namegood.innerText = document.querySelectorAll('h2.name')[2].innerText;
+                    quantity.innerText = prompt("Введите количество");
+                    var pr = 0;
+                    pr = Number(document.querySelectorAll('h3.price')[2].innerText) * Number(quantity.innerText);
+                    pricegood.innerText = pr;
+                    sumprice += pr;
+                    document.querySelector("div#d1").append(good);
+                    document.querySelector("div.good-3-court").append(namegood);
+                    document.querySelector("div.good-3-court").append(quantity);
+                    document.querySelector("div.good-3-court").append(pricegood);
+                    break;
+            }
+            namegood.classList.add("court-name");
+            good.classList.add("court-good");
+            pricegood.classList.add("court-price");
+            quantity.classList.add("court-name");
+            sum.innerText = "Показать общую сумму";
+            document.querySelector("div#d1").append(sum);
+            sum.classList.add("sumall");
+            sum.onclick = function(e) {
+                court.insertAdjacentHTML("beforeEnd", "<h2 class ='sum'>" + sumprice + "</h2>");
+            }
+
+
+        }
+        var masbutton = document.querySelectorAll("button");
+        for (var item of masbutton) {
+            item.onclick = addtocourt;
+        }
+
+    </script>
+</body>
+
+</html>
