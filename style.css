@@ -25,6 +25,10 @@ main{
     margin-right: 30px;
     margin-top: 15px;
 }
+.cart-button:hover{
+    color:crimson;
+    background-color: white;
+}
 
 .goods-list{
     display: flex;
@@ -63,4 +67,25 @@ main{
     height: 30px;
     float: right;
     margin-right: 15px;
+}
+
+.add-button:hover{
+    color:crimson;
+    background-color: white;
+}
+
+.sum{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sum-text{
+    font-size: 30px;
+    color: dimgray;
+}
+
+.sum-price{
+    font-size: 30px;
+    color: crimson;
+    font-weight: 700;
 }
