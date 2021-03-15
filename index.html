@@ -7,14 +7,19 @@
 <body>
   <header>
     <button class="cart-button" type="button">Корзина</button>
+<!--    <input type="text" id='search'>-->
   </header>
   <main>
     <div class="goods-list">
        
     </div>
-    <div class="sum">
-           <span class="sum-text">Общая стоимость:</span>
+    <div class="cart visually-hidden">
+       <h2 class="cart-name">Корзина</h2>
+       <div class="cart-goods"></div>
+        <div class="sum">
+           <span class="sum-text">Общая стоимость:<span class="sum-price">0</span></span>
        </div>
+    </div>
   </main>
 
   <script src="script.js"></script>
