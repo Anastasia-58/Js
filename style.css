@@ -167,3 +167,14 @@ main{
     color: crimson;
     font-weight: 600;
 }
+
+#search{
+    margin-left: 80px;
+    margin-top: 18px;
+    width: 140px;
+    height: 20px;
+    border: 1px solid crimson;
+    border-radius: 20px;
+    color: crimson;
+    padding-left: 10px;
+}

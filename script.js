@@ -72,8 +72,6 @@ class GoodsList {
         this.header.setButtonHandler((evt)=>{
             this.cart.showCart(evt.target.value);
         })
-        
-        
 
         this.api.fetch(this.onFetchError.bind(this), this.onFetchSuccess.bind(this)); //без промисов
         
@@ -88,6 +86,7 @@ class GoodsList {
             title,
             price
         }) => new GoodsItem(title, price));
+        this.filtereGoods = this.goods;
         this.render();
         
     }
@@ -107,7 +106,7 @@ class GoodsList {
 
     render() {
         this.$goodlist.textContent = '';
-        this.goods.forEach(good => {
+        this.filtereGoods.forEach(good => {
             this.$goodlist.insertAdjacentHTML('beforeend', good.getHtml());
 
         });
@@ -125,9 +124,6 @@ class GoodsList {
             });
         
         }
-
-    
-    
 }
 
 class Cart {
@@ -260,6 +256,8 @@ class Header {
     setButtonHandler(callback){
         this.$buttoncart.addEventListener('click', callback);
     }
+    
+    
     
 }
 
