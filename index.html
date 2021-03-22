@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>eShop</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-   <input id='search'>
-    <button class="cart-button" type="button">Корзина</button>
-    
-  </header>
-  <main>
-    <div class="goods-list">
-       
-    </div>
-    <div class="cart visually-hidden">
-       <h2 class="cart-name">Корзина</h2>
-       <div class="cart-goods"></div>
-        <div class="sum">
-           <span class="sum-text">Общая стоимость:<span class="sum-price">0</span></span>
-       </div>
-    </div>
-  </main>
 
-  <script src="script.js"></script>
+<head>
+    <title>eShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <input id='search' v-model="search" v-on:input="searchHandler">
+            <button class="cart-button" type="button" v-on:click="showCart">Корзина</button>
+        </header>
+        <main>
+           <div>
+               <div class="goods-list" v-if="goods.length != 0">
+                <div class="goods-item" v-for="(good, index) in filtredGoods">
+                    <img src="./img/img.jpg" alt="img" class="goods-img" width="145">
+                    <h3 class="goods-title">{{ good.title }}</h3>
+                    <p class="goods-price">{{ good.price }}</p>
+                    <button class="add-button" type="button" v-on:click="addToCart(index)">Добавить</button>
+                </div>
+            </div>
+            <div v-else><h1>Нет данных</h1></div>
+           </div>
+            
+            <div class="cart visually-hidden">
+                <h2 class="cart-name">Корзина</h2>
+                <div class="cart-goods" v-if="busketgoods.length !=0">
+                    <div class="cart-item" v-for="(good, index) in busketgoods">
+                        <img src="./img/img.jpg" alt="img" class="cart-img" width="145">
+                        <div class="cart-info">
+                            <h3 class="cart-title">{{ good.title }}</h3>
+                            <p class="cart-price">{{ good.price }}</p>
+                            <div class="quantity"><button class="plus-button" type="button" v-on:click="buttonplus(index)"><img src="./img/plus.png" alt="plus" class="plus-img" width="25"></button>
+                                <p class="quantity-text">{{ good.quantity}}</p><button class="minus-button" type="button" v-on:click="buttonminus(index)"><img src="./img/minus.png" alt="minus" class="minus-img" width="25"></button>
+                            </div>
+                            <button class="del-button" type="button" v-on:click="deleteItem(index)">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 v-else>Корзина пуста</h3>
+                <div class="sum" v-if="busketgoods.length !=0">
+                    <span class="sum-text">Общая стоимость:<span class="sum-price">0</span></span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
