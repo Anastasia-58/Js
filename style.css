@@ -12,6 +12,7 @@ main{
     padding-left: 80px;
     padding-right: 80px;
     padding-top: 50px;
+    display: block;
 }
 
 .cart-button{
@@ -69,7 +70,7 @@ main{
     margin-right: 15px;
 }
 
-.add-button:hover{
+.add-button:hover, .del-button:hover{
     color:crimson;
     background-color: white;
 }
