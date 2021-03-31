@@ -15,12 +15,12 @@
     <main>
       <div class="goods-list" v-on:click="addToCartHandler">
        <p v-if="isLoaded && goods.length==0">Корзина пуста</p>
-        <goods-item 
+        <goods_item 
           v-for="good in filtredGoods" 
           v-bind:title="good.title" 
           v-bind:price="good.price"
           v-bind:id="good.id"
-        ></goods-item>
+        ></goods_item>
         </div>
         
         <div class="cart visually-hidden">
@@ -42,7 +42,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="script.js"></script>
+    <script src="build.js"></script>
 </body>
 
 </html>
