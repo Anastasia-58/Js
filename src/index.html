@@ -3,7 +3,7 @@
 
 <head>
     <title>eShop</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -14,7 +14,6 @@
     </header>
     <main>
       <div class="goods-list" v-on:click="addToCartHandler">
-       <p v-if="!isLoaded">Loading...</p>
        <p v-if="isLoaded && goods.length==0">Корзина пуста</p>
         <goods-item 
           v-for="good in filtredGoods" 
